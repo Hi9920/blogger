@@ -1,0 +1,17 @@
+<b:section class='social' id='social' maxwidgets='1' name='Social Footer' showaddelement='yes'>
+  <b:widget id='LinkList20' locked='true' title='Social Media Icons' type='LinkList' version='1'>
+    <b:includable id='main'>
+      <b:if cond='data:title != &quot;&quot;'>
+        <h2><data:title/></h2>
+      </b:if>
+      <div class='widget-content'>
+        <ul>
+          <b:loop values='data:links' var='link'>
+            <li><a expr:class='data:link.name' expr:href='data:link.target' expr:title='data:link.name'/></li>
+          </b:loop>
+        </ul>
+        <b:include name='quickedit'/>
+      </div>
+    </b:includable>
+  </b:widget>
+</b:section>
