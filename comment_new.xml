@@ -1,0 +1,37 @@
+<div id='nxnew'>
+  <script expr:src='&quot;/feeds/&quot; + data:post.id + &quot;/comments/default?alt=json-in-script&amp;max-results=5&amp;callback=nxnew&quot;' type='text/javascript'/>
+</div>
+
+<script type='text/javascript'>
+  //<![CDATA[
+  function nxnew(_0x60abx2) {
+    var _0x60abx3;
+    _0x60abx3 = "<ul>";
+    for (var _0x60abx4 = 0; numComments > _0x60abx4; _0x60abx4++) {
+      var _0x60abx5, _0x60abx6, _0x60abx7, _0x60abx8;
+      if (_0x60abx4 == _0x60abx2.feed.entry.length) {
+        break
+      };
+      _0x60abx3 += "<li>";
+      for (var _0x60abx9 = _0x60abx2.feed.entry[_0x60abx4], _0x60abxa = 0; _0x60abxa < _0x60abx9.link.length; _0x60abxa++) {
+        "alternate" == _0x60abx9.link[_0x60abxa].rel && (_0x60abx5 = _0x60abx9.link[_0x60abxa].href)
+      };
+      for (var _0x60abxb = 0; _0x60abxb < _0x60abx9.author.length; _0x60abxb++) {
+        _0x60abx6 = _0x60abx9.author[_0x60abxb].name["$t"], _0x60abx7 = _0x60abx9.author[_0x60abxb]["gd$image"].src
+      };
+      _0x60abx7 = -1 != _0x60abx7.indexOf("/s1600/") ? _0x60abx7.replace("/s1600/", "/s" + avatarSize + "-c/") : -1 != _0x60abx7.indexOf("/s113/") ? _0x60abx7.replace("/s113/", "/s" + avatarSize + "-c/") : -1 != _0x60abx7.indexOf("/s512-c/") && 0 != _0x60abx7.indexOf("https:") ? "https:" + _0x60abx7.replace("/s512-c/", "/s" + avatarSize + "-c/") : -1 != _0x60abx7.indexOf("blogblog.com/img/b16-rounded.gif") ? "//1.bp.blogspot.com/-NAMZejK41So/T0evV0_SSUI/AAAAAAAACso/ol6-PKkZipA/s" + avatarSize + "/md_blogger_logo.png" : -1 != _0x60abx7.indexOf("blogblog.com/img/openid16-rounded.gif") ? "//4.bp.blogspot.com/-k0U7v1WpNRs/T0euKMHQi_I/AAAAAAAACsg/DNqzinhvxt4/s" + avatarSize + "/md_openid_logo.png" : -1 != _0x60abx7.indexOf("blogblog.com/img/blank.gif") ? -1 != defaultAvatar.indexOf("gravatar.com") ? defaultAvatar + "&s=" + avatarSize : defaultAvatar : _0x60abx7, 1 == showAvatar && (_0x60abx8 = 1 == roundAvatar ? "avatarRound" : "", _0x60abx3 += "<div class=\"trai avatarImage " + _0x60abx8 + "\"><img class=\"" + _0x60abx8 + "\" src=\"" + _0x60abx7 + "\" alt=\"" + _0x60abx6 + "\" width=\"" + avatarSize + "\" height=\"" + avatarSize + "\"/></div>"), _0x60abx3 += "<div class='trai noi-dung'><span class='name'>" + _0x60abx6 + "</span></a>";
+      var _0x60abxc = _0x60abx9.content["$t"],
+        _0x60abxd = _0x60abxc.replace(/(<([^>]+)>)/gi, "");
+      "" != _0x60abxd && _0x60abxd.length > characters ? (_0x60abxd = _0x60abxd.substring(0, characters), _0x60abxd += "…") : _0x60abxd = _0x60abxd, _0x60abx3 += "<a class='nxnew' href='" + _0x60abx5 + "'>" + _0x60abxd + "</a>", _0x60abx3 += "<div style='clear: both'/></li>"
+    };
+    _0x60abx3 += "", document.write(_0x60abx3)
+  }
+  var numComments = 5,
+    avatarSize = 30,
+    characters = 100,
+    defaultAvatar = defaultAvatar || "https://4.bp.blogspot.com/-jmA-qIOJIFU/WfgKSYnhm5I/AAAAAAAAABQ/ElEIBlHd31gISODb3GlA9Z_JPRKiSzvYQCLcBGAs/s40/Logo-Bac-Si-Windows.png",
+    showAvatar = "undefined" == typeof showAvatar ? !0 : showAvatar,
+    roundAvatar = "undefined" == typeof roundAvatar ? !0 : roundAvatar,
+    hideCredits = "undefined" == typeof hideCredits ? !1 : roundAvatar
+  //]]>
+</script>
