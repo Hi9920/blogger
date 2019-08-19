@@ -1,0 +1,19 @@
+Created <i class='fa fa-heart'/> <a id='copyright' expr:href='data:blog.homepageUrl' target='_blank' rel='dofollow' itemprop='url'><data:blog.title/></a>
+
+<script type='text/javascript'>
+  //<![CDATA[
+  window.onload = function() {
+    var e = document.getElementById('copyright');
+    if (e == null) {
+      window.location.href = 'http://hi9920.blogspot.com/'
+    }
+    e.setAttribute('href', 'http://hi9920.blogspot.com/');
+    e.setAttribute('rel', 'dofollow');
+    e.setAttribute('style', 'color:#1BB!important;');
+    e.innerHTML = 'Hi9920'
+  }
+  setTimeout(function(){
+    if (!document.getElementById('copyright')) {window.location.assign('https://hi9920.blogspot.com/')}
+  }, 1000);
+  //]]>
+</script>
