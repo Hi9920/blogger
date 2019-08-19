@@ -1,4 +1,4 @@
-<b:section class='social' id='social' maxwidgets='1' name='Social Footer' showaddelement='yes'>
+<b:section class='social' id='social' maxwidgets='1' name='Social' showaddelement='yes'>
   <b:widget id='LinkList20' locked='true' title='Social Media Icons' type='LinkList' version='1'>
     <b:includable id='main'>
       <b:if cond='data:title != &quot;&quot;'>
