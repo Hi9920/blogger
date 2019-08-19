@@ -1,0 +1,70 @@
+<div id='menu'>
+  <li class='home-child'><a expr:href='data:blog.homepageUrl'><i aria-hidden='true' class='fa fa-home'/></a></li>
+  <b:section class='header-menu' id='header-menu' showaddelement='no'>
+    <b:widget id='LinkList1' locked='true' title='Menu' type='LinkList' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='text-10'>_Sub 3</b:widget-setting>
+        <b:widget-setting name='sorting'>NONE</b:widget-setting>
+        <b:widget-setting name='link-1'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-13'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-2'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-12'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-0'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-11'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-10'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='text-9'>_Sub 2</b:widget-setting>
+        <b:widget-setting name='link-9'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='text-8'>_Sub 1</b:widget-setting>
+        <b:widget-setting name='link-7'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-8'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-5'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-6'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-3'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='link-4'>javascript:0;</b:widget-setting>
+        <b:widget-setting name='text-1'>Tip</b:widget-setting>
+        <b:widget-setting name='text-0'>Home</b:widget-setting>
+        <b:widget-setting name='text-3'>_Tip 2</b:widget-setting>
+        <b:widget-setting name='text-2'>_Tip 1</b:widget-setting>
+        <b:widget-setting name='text-5'>_Tip 4</b:widget-setting>
+        <b:widget-setting name='text-4'>_Tip 3</b:widget-setting>
+        <b:widget-setting name='text-7'>Game</b:widget-setting>
+        <b:widget-setting name='text-6'>_Tip 5</b:widget-setting>
+        <b:widget-setting name='text-11'>_Sub 4</b:widget-setting>
+        <b:widget-setting name='text-12'>_Sub 5</b:widget-setting>
+        <b:widget-setting name='text-13'>Sitemap</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <div class='widget-content'>
+          <ul class='menu' itemscope='' itemtype='http://schema.org/SiteNavigationElement'>
+            <b:loop values='data:links' var='link'>
+              <li itemprop='name'><a expr:href='data:link.target' itemprop='url'><data:link.name/></a></li>
+            </b:loop>
+          </ul>
+          <script type='text/javascript'>
+            //<![CDATA[
+            $("#LinkList1").each(function() {
+              var e = "<ul class='menu'><li><ul id='dropdown'>";
+              $("#LinkList1 li").each(function() {
+                var t = $(this).text(),
+                  n = t.substr(0, 1),
+                  r = t.substr(1);
+                "_" == n ? (n = $(this).find("a").attr("href"), e += '<li><a href="' + n + '">' + r + "</a></li>") : (n = $(this).find("a").attr("href"), e += '</ul></li><li><a href="' + n + '">' + t + "</a><ul id='dropdown'>")
+              });
+              e += "</ul></li></ul>";
+              $(this).html(e);
+              $("#LinkList1 ul").each(function() {
+                var e = $(this);
+                if (e.html().replace(/\s|&nbsp; /g, "").length == 0) e.remove()
+              });
+              $("#LinkList1 li").each(function() {
+                var e = $(this);
+                if (e.html().replace(/\s|&nbsp; /g, "").length == 0) e.remove()
+              })
+            });
+            //]]>
+          </script>
+        </div>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</div>
