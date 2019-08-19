@@ -1,0 +1,104 @@
+<div class='share-this'>
+  <h1>Share this:</h1>
+  <ul>
+    <li><a class='facebook' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url + &quot;&amp;title=&quot;+ data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'></a></li>
+    <li><a class='twitter' expr:href='&quot;http://twitter.com/share?url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'></a></li>
+    <li><a class='pinterest' expr:href='&quot;http://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;media=&quot; + data:post.firstImageUrl + &quot;&amp;description=&quot; + data:post.snippet' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'></a></li>
+    <li><a class='linkedin' expr:href='&quot;http://www.linkedin.com/shareArticle?url=&quot; + data:post.url + &quot;&amp;title=&quot;+ data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'></a></li>
+    <li><a class='more'></a></li>
+  </ul>
+</div>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  ul, li {
+    list-style-type: none;
+  }
+  .share-this {
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  .share-this h1 {
+    float: left;
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .share-this ul {
+    float: right;
+  }
+  .share-this li {
+    float: left;
+  }
+  .share-this li a {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    background: green;
+    margin-left: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .facebook:before, .twitter:before, .pinterest:before, .linkedin:before {
+    display: block;
+    font-family: FontAwesome;
+    color: #FFF;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3) inset;
+  }
+  .facebook:before {
+    content: '\f09a';
+    background: #1877f2;
+  }
+  .twitter:before {
+    content: '\f099';
+    background: #55ACEE;
+  }
+  .pinterest:before {
+    content: '\f231';
+    background: #cb2027;
+  }
+  .linkedin:before {
+    content: '\f0e1';
+    background: #007bb5;
+  }
+  .share-this .more {
+    width: 30px;
+    height;
+    30px;
+    background: #F1F1F1;
+    position: relative;
+  }
+  .share-this .more:before, .share-this .more:after {
+    content: '';
+    display: block;
+    background: #1BB;
+    border-radius: 1px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .share-this .more:before {
+    width: 4px;
+    height: calc(100% - 10px);
+  }
+  .share-this .more:after {
+    width: calc(100% - 10px);
+    height: 4px;
+  }
+  .share-this ul:hover li a {
+    opacity: 0.2;
+  }
+  .share-this ul li a:hover {
+    opacity: 1;
+  }
+</style>
