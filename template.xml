@@ -2091,6 +2091,46 @@
                         .tags a {
                           font-size: 14px;
                         }
+                        .pageurl {
+                          width: 100%;
+                          font-size: 14px;
+                          position: relative;
+                          overflow: hidden;
+                        }
+                        .pageurl:before {
+                          content: &#39;&#39;;
+                          display: block;
+                          width: 1px;
+                          height: calc(100% - 10px);
+                          background: #F1F1F1;
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          -webkit-transform: translate(-50%, -50%);
+                              -ms-transform: translate(-50%, -50%);
+                                  transform: translate(-50%, -50%);
+                        }
+                        .pageurl .next {
+                          float: left;
+                          width: 50%;
+                          padding-right: 5px;
+                          -webkit-box-sizing: border-box;
+                                  box-sizing: border-box;
+                        }
+                        .pageurl .previous {
+                          float: right;
+                          width: 50%;
+                          text-align: right;
+                          padding-left: 5px;
+                          -webkit-box-sizing: border-box;
+                                  box-sizing: border-box;
+                        }
+                        .pageurl span {
+                          display: -webkit-box;
+                          -webkit-line-clamp: 1;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                        }
                       </style>
                     </b:if>
                     <b:if cond='data:blog.pageType == &quot;item&quot;'>
