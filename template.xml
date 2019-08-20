@@ -321,6 +321,21 @@
         list-style-type: none;
         padding: 0
       }
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        background: #ccc;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 100px;
+      }
+      ::-webkit-scrollbar-thumb:active {
+        background: #CCC;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #000;
+      }
       ::-moz-selection {
         color: #FFF;
         background: #1BB;
@@ -2024,6 +2039,44 @@
                             <li><a class='more'/></li>
                           </ul>
                         </div>
+
+                        <ul class='pageurl'>
+                          <li class='next'>
+                            <b:if cond='data:newerPageUrl'>
+                              <a class='newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'/>
+                              <b:else/>
+                              <a>
+                                <strong>Sorry!</strong>
+                                <span>Bạn đang xem bài viết gần đây nhất</span>
+                              </a>
+                            </b:if>
+                          </li>
+                          <li class='previous'>
+                            <b:if cond='data:olderPageUrl'>
+                              <a class='older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'/>
+                              <b:else/>
+                              <a>
+                                <strong>Sorry!</strong>
+                                <span>Bạn đang xem bài viết cuối cùng</span>
+                              </a>
+                            </b:if>
+                          </li>
+                        </ul>
+                        <script type='text/javascript'>
+                          //<![CDATA[
+                          (function($) {
+                            var newerLink = $('a.newer-link');
+                            var olderLink = $('a.older-link');
+                            $.get(newerLink.attr('href'), function(data) {
+                              newerLink.html('<strong>Bài viết mới hơn</strong><span>'+$(data).find(".post-title").text()+'</span >');
+                            }, 'html');
+                            $.get(olderLink.attr('href'), function(data2) {
+                              olderLink.html('<strong>Bài viết cũ hơn</strong><span>'+$(data2).find(".post-title").text()+'</span>');
+                            }, 'html');
+                          })(jQuery);
+                          //]]>
+                        </script>
+
                       </div>
                     </b:if>
                     <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -2034,7 +2087,7 @@
                                   box-sizing: border-box;
                         }
                         h1.post-title.entry-title {
-                          font-size: 20px;
+                          font-size: 18px;
                         }
                         .time {
                           font-size: 13px;
@@ -2634,6 +2687,7 @@
         var menusidebar = document.querySelector(&#39;#menu-sidebar .content-menu&#39;);
         menusidebar.innerHTML = menu.innerHTML;
       });
+      
     </script>
   </body>
 </html>
