@@ -2034,7 +2034,6 @@
                             <li><a class='more'/></li>
                           </ul>
                         </div>
-
                         <ul class='pageurl'>
                           <li class='next'>
                             <b:if cond='data:newerPageUrl'>
@@ -2057,20 +2056,6 @@
                             </b:if>
                           </li>
                         </ul>
-                        <script type='text/javascript'>
-                          //<![CDATA[
-                          (function($) {
-                            var newerLink = $('a.newer-link');
-                            var olderLink = $('a.older-link');
-                            $.get(newerLink.attr('href'), function(data) {
-                              newerLink.html('<strong>Bài viết mới hơn</strong><span>'+$(data).find(".post-title").text()+'</span >');
-                            }, 'html');
-                            $.get(olderLink.attr('href'), function(data2) {
-                              olderLink.html('<strong>Bài viết cũ hơn</strong><span>'+$(data2).find(".post-title").text()+'</span>');
-                            }, 'html');
-                          })(jQuery);
-                          //]]>
-                        </script>
 
                       </div>
                     </b:if>
@@ -2650,9 +2635,11 @@
         </div>
       </div>
     </div>
+
     <div id='fb-root'/>
     <script async='async' crossorigin='anonymous' defer='defer' src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&amp;version=v4.0&amp;appId=359757701254774&amp;autoLogAppEvents=1'/>
-    <script>
+
+    <script type='text/javascript'>
       $(&quot;.sidebar .widget h2&quot;).wrap(&quot;<div class='widget-title'/>&quot;);
 
       $(document).ready(function() {
@@ -2682,7 +2669,21 @@
         var menusidebar = document.querySelector(&#39;#menu-sidebar .content-menu&#39;);
         menusidebar.innerHTML = menu.innerHTML;
       });
-      
+
+      //<![CDATA[
+      (function($) {
+        var newerLink = $('a.newer-link');
+        var olderLink = $('a.older-link');
+        $.get(newerLink.attr('href'), function(data) {
+          newerLink.html('<strong>Bài viết mới hơn</strong><span>' + $(data).find(".post-title").text() + '</span>');
+        }, 'html');
+        $.get(olderLink.attr('href'), function(data2) {
+          olderLink.html('<strong>Bài viết cũ hơn</strong><span>' + $(data2).find(".post-title").text() + '</span>');
+        }, 'html');
+      })(jQuery);
+      //]]>
+
     </script>
+    
   </body>
 </html>
