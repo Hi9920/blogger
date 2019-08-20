@@ -826,7 +826,7 @@
 
 
       .share-this {
-        margin: auto;
+        margin: 5px auto;
         width: 100%;
         overflow: hidden;
       }
@@ -2034,6 +2034,7 @@
                             <li><a class='more'/></li>
                           </ul>
                         </div>
+                        <div class='ads-post'><a name='ads-post'/></div>
                         <ul class='pageurl'>
                           <li class='next'>
                             <b:if cond='data:newerPageUrl'>
@@ -2056,7 +2057,6 @@
                             </b:if>
                           </li>
                         </ul>
-
                       </div>
                     </b:if>
                     <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -2076,6 +2076,9 @@
                           font-size: 14px;
                           float: left;
                           margin-right: 5px;
+                        }
+                        .tags a {
+                          font-size: 14px;
                         }
                       </style>
                     </b:if>
@@ -2577,6 +2580,9 @@
             </b:section>
             <b:section class='ads-b' id='ads-b' maxwidgets='1' name='Ads B' showaddelement='no'>
               <b:widget id='HTML2' locked='true' title='' type='HTML'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'><![CDATA[<a expr:href='data:blog.homepageUrl'><img src='https://i.imgur.com/TdplGsN.jpg'/></a>]]></b:widget-setting>
+                </b:widget-settings>
                 <b:includable id='main'>
   <!-- only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
@@ -2682,7 +2688,10 @@
         }, 'html');
       })(jQuery);
       //]]>
-
+      $(document).ready(function() {
+        $(&#39;a[name=&quot;ads-post&quot;]&#39;).before($(&#39;#ads-b&#39;).html());
+        $(&#39;#ads-b&#39;).html(&#39;&#39;)
+      });
     </script>
 
   </body>
