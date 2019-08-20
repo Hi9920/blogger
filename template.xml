@@ -1910,24 +1910,19 @@
                 </div>
               </b:includable>
                 <b:includable id='nextprev'>
-                <div class='blog-pager' id=''>
-                  <b:if cond='data:newerPageUrl'>
-                    <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'>
-                      <i class='fa fa-arrow-left'/>
-                    </a>
-                  </b:if>
-                  <a class='home-link' expr:href='data:blog.homepageUrl'><i class='fa fa-home'/></a>
-                  <b:if cond='data:olderPageUrl'>
-                    <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'>
-                      <i class='fa fa-arrow-right'/>
-                    </a>
-                  </b:if>
-                  <b:if cond='data:mobileLinkUrl'>
-                    <div class='blog-mobile-link'><a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a></div>
-                  </b:if>
-                </div>
-                <div class='clear'/>
-              </b:includable>
+                  <div class='blog-pager'>
+                    <b:if cond='data:newerPageUrl'>
+                      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'><i class='fa fa-arrow-left'/></a>
+                    </b:if>
+                    <a class='home-link' expr:href='data:blog.homepageUrl'><i class='fa fa-home'/></a>
+                    <b:if cond='data:olderPageUrl'>
+                      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'><i class='fa fa-arrow-right'/></a>
+                    </b:if>
+                    <b:if cond='data:mobileLinkUrl'>
+                      <div class='blog-mobile-link'><a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a></div>
+                    </b:if>
+                  </div>
+                </b:includable>
                 <b:includable id='post' var='post'>
                   <b:if cond='data:blog.pageType == &quot;item&quot;'>
                     <div class='breadcrumbs' xmlns:v='http://rdf.data-vocabulary.org/#'>
