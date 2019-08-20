@@ -37,7 +37,7 @@
       </b:if>
     </b:if>
     <b:if cond='data:blog.url == data:blog.homepageUrl'>
-      <meta content='STARHIEP, starhiep, hiệp, Ngô Văn Hiệp, ngô văn hiệp, ngo van hiep, văn hiệp, van hiep, hiệp, hiep, Hiệp Deep, Blogger, Template blogspot, Code HTML5, Code CSS3, Code JS, PSD Ảnh bìa Facebook, PSD Mockup, PSD Logo, Ảnh nền, Mở khoá tài khoản Facebook, Rip tài khoản Facebook, Checkpass tài khoản Facebook, Code F12 Facebook' name='keywords'/>
+      <meta content='Hi9920, STARHIEP, starhiep, hiệp, Ngô Văn Hiệp, ngô văn hiệp, ngo van hiep, văn hiệp, van hiep, hiệp, hiep, Hiệp Deep, Blogger, Template blogspot, Code HTML5, Code CSS3, Code JS, PSD Ảnh bìa Facebook, PSD Mockup, PSD Logo, Ảnh nền, Mở khoá tài khoản Facebook, Rip tài khoản Facebook, Checkpass tài khoản Facebook, Code F12 Facebook' name='keywords'/>
     </b:if>
     <b:if cond='data:blog.url == data:blog.homepageUrl'>
       <meta content='DESKRIPSI-BLOG' name='keywords'/>
@@ -53,7 +53,7 @@
     <link expr:href='data:blog.url' hreflang='x-default' rel='alternate'/>
     <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
     <meta content='Vietnam' name='geo.placename'/>
-    <meta content='STARHIEP' name='Author'/>
+    <meta content='Hi9920' name='Author'/>
     <meta content='general' name='rating'/>
     <meta content='id' name='geo.country'/>
     <meta content='VN' name='geo.region'/>
@@ -689,12 +689,20 @@
         font-size: 14px;
         background: #FFF;
         margin: 0 0 20px;
-        padding: 5px;
         border-radius: 5px;
+        overflow: hidden;
+        position: relative;
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
                 box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+      }
+      .breadcrumbs .home {
+        padding: 0;
+        background: #1BB;
+        width: 25px;
+        line-height: 25px;
+        text-align: center;
       }
       .breadcrumbs span {
         display: inline-block;
@@ -760,6 +768,9 @@
         margin: 0 0 10px;
       }
       .b-sidebar .sidebar .widget {
+        margin: 0 0 20px;
+      }
+      .b-sidebar .sidebar .widget:last-child {
         margin: 0 0 10px;
       }
       .b-sidebar .sidebar .widget-title, .m-rec {
@@ -786,7 +797,7 @@
                 box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
       }
       #created {
-        line-height: 30px;
+        line-height: 50px;
         text-align: center;
         font-size: 16px;
       }
@@ -1926,8 +1937,8 @@
                 <b:includable id='post' var='post'>
                   <b:if cond='data:blog.pageType == &quot;item&quot;'>
                     <div class='breadcrumbs' xmlns:v='http://rdf.data-vocabulary.org/#'>
-                      <span typeof='v:Breadcrumb'><a class='fa fa-home' expr:href='data:blog.homepageUrl' property='v:title' rel='v:url'/></span>
-                      <brc>/</brc>
+                      <span class='home' typeof='v:Breadcrumb'><a class='fa fa-home' expr:href='data:blog.homepageUrl' property='v:title' rel='v:url'/></span>
+                      <brc/>
                       <b:loop values='data:posts' var='post'>
                         <b:if cond='data:post.labels'>
                           <b:loop values='data:post.labels' var='label'>
@@ -1939,8 +1950,8 @@
                           <b:else/>
                           Không có nhãn
                         </b:if>
-                        <brc>/</brc>
-                        <span><data:post.title/></span>
+                        <brc>|</brc>
+                        <span class='title'><data:post.title/></span>
                       </b:loop>
                     </div>
                   </b:if>
