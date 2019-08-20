@@ -2653,6 +2653,192 @@
           </div>
           <div class='b-sidebar'>
             <b:section class='sidebar' id='sidebar' name='Sidebar' showaddelement='yes'>
+              <b:widget id='HTML5' locked='false' title='Thông tin trang web' type='HTML'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'>&lt;div class=&#39;card-author&#39;&gt;
+  &lt;div class=&#39;head&#39;&gt;
+    &lt;div class=&#39;cover&#39;&gt;
+      &lt;img src=&#39;//wallpaperbro.com/img/217984.jpg&#39;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&#39;avatar&#39;&gt;
+      &lt;img src=&#39;//www.w3schools.com/w3images/team1.jpg&#39;/&gt;
+    &lt;/div&gt;
+    &lt;div class=&#39;name-author&#39;&gt;&lt;a&gt;Văn Hiệp&lt;/a&gt;&lt;/div&gt;
+    &lt;a class=&#39;view-profile&#39; href=&#39;//www.blogger.com/profile/00169873250519780843&#39; rel=&#39;author&#39; title=&#39;Xem hồ sơ của tôi&#39;&gt;&lt;/a&gt;
+    &lt;div class=&#39;nav&#39;&gt;
+      &lt;li&gt;&lt;a class=&#39;facebook&#39;&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class=&#39;youtube&#39;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/div&gt;
+    &lt;div class=&#39;mota&#39;&gt;&lt;b&gt;Hi9920&lt;/b&gt; là một website chia sẻ kiến thức về Blogspot, Template Blogger, Thiết kế website và một số thủ thuật hữu ích khác.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  .card-author {
+    width: 100%;
+    background: #FFF;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+            box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+    position: relative;
+    padding: 0 0 5px;
+  }
+  .card-author .cover {
+    height: 100px;
+  }
+  .card-author .cover img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card-author .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin: -30px 0 0 10px;
+    -webkit-box-shadow: 0 0 0 2px #FFF;
+            box-shadow: 0 0 0 2px #FFF;
+    float: left;
+  }
+  .card-author .avatar img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card-author .name-author {
+    margin: -20px 0 0 75px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .card-author .name-author a {
+    color: #FFF;
+  }
+  .card-author .name-author:after {
+    content: &#39;\f058&#39;;
+    font-family: FontAwesome;
+    margin-left: 4px;
+    color: mediumseagreen;
+  }
+  .card-author .view-profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-image: -o-linear-gradient(45deg, #1EADF0, #0AFB60);
+    background-image: linear-gradient(45deg, #1EADF0, #0AFB60);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    margin-top: -14px;
+    right: 10px;
+    -webkit-box-shadow: 0 0 10px 0px rgba(0, 0, 0, .3);
+            box-shadow: 0 0 10px 0px rgba(0, 0, 0, .3);
+  }
+  .card-author .view-profile:hover:before {
+    border-left: 12px solid #FFF;
+  }
+  .card-author .view-profile:hover:after {
+    background: transparent;
+  }
+  .card-author .view-profile:before {
+    content: &#39;&#39;;
+    display: block;
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-top: 6px solid transparent;
+    border-left: 12px solid #1BB;
+    border-bottom: 6px solid transparent;
+    margin-left: 2px;
+    z-index: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .card-author .view-profile:after {
+    content: &#39;&#39;;
+    display: block;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50%;
+    background: #FFF;
+    position: absolute;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .card-author .nav {
+    float: left;
+    margin: 5px 0 0;
+  }
+  .card-author .nav li {
+    list-style: none;
+    float: left;
+  }
+  .card-author .nav li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .card-author .facebook:before, .card-author .youtube:before {
+    font-family: FontAwesome;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    line-height: 21px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3) inset;
+            box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3) inset;
+  }
+  .card-author .facebook:before {
+    content: &#39;\f09a&#39;;
+    background: #1877f2;
+  }
+  .card-author .youtube:before {
+    content: &#39;\f16a&#39;;
+    background: #e02a20;
+  }
+  .card-author .mota {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    text-align: center;
+    clear: both;
+    margin: 38px 0 0;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+&lt;/style&gt;</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+              </b:widget>
               <b:widget id='HTML3' locked='false' title='Test sidebar 1' type='HTML'>
                 <b:widget-settings>
                   <b:widget-setting name='content'><![CDATA[<div style='width:100%;height:300px;background:dodgerblue;'></div>]]></b:widget-setting>
