@@ -45,6 +45,25 @@
     <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
     <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
     <link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+
+    <link href='/apple-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'/>
+    <link href='/apple-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'/>
+    <link href='/apple-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'/>
+    <link href='/apple-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'/>
+    <link href='/apple-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'/>
+    <link href='/apple-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'/>
+    <link href='/apple-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'/>
+    <link href='/apple-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'/>
+    <link href='/apple-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'/>
+    <link href='/android-icon-192x192.png' rel='icon' sizes='192x192' type='image/png'/>
+    <link href='/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'/>
+    <link href='/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'/>
+    <link href='/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'/>
+    <link href='/manifest.json' rel='manifest'/>
+    <meta content='#ffffff' name='msapplication-TileColor'/>
+    <meta content='/ms-icon-144x144.png' name='msapplication-TileImage'/>
+    <meta content='#1AAAAA' name='theme-color'/>
+
     <b:if cond='data:blog.pageType == &quot;item&quot;'>
       <b:if cond='data:blog.postImageThumbnailUrl'>
         <link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'/>
@@ -638,7 +657,7 @@
       .post {
         background: #FFF;
         width: 100%;
-        margin: 0 0 20px;
+        margin: 0;
         overflow: hidden;
         border-radius: 5px;
         -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
@@ -689,7 +708,7 @@
       .breadcrumbs {
         font-size: 14px;
         background: #FFF;
-        margin: 0 0 20px;
+        margin: 0 0 10px;
         border-radius: 5px;
         overflow: hidden;
         position: relative;
@@ -737,6 +756,7 @@
             -ms-flex-pack: center;
                 justify-content: center;
         width: 100%;
+        margin: 10px 0 0;
       }
       .blog-pager a {
         display: -webkit-box;
@@ -744,8 +764,8 @@
         display: flex;
         width: 40px;
         height: 40px;
-        background: #EEE;
-        color: #000;
+        background: #1BB;
+        color: #FFF;
         margin: 0 5px;
         border-radius: 5px;
         -webkit-box-pack: center;
@@ -789,6 +809,64 @@
         display: inline-block;
         padding: 0 10px;
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      .label-size {
+        display: block;
+        padding: 2px 0;
+        box-sizing: border-box;
+        line-height: 30px;
+        border-top: 1px dotted;
+      }
+      .label-size:first-child {
+        margin: 0;
+        border-top: 0;
+      }
+      .label-size a {
+        position: relative;
+        margin-left: 17px;
+      }
+      .label-size a:after {
+        content: &#39;&#39;;
+        display: block;
+        width: 5px;
+        height: 5px;
+        border: 2px solid;
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .label-count {
+        float: right;
+        background: #1BB;
+        color: #FFF;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 0 0 1px #1BB inset, 0 0 0 2px #FFF inset;
+      }
+
+
+
+
+
+
+
+
       .b-footer {
         clear: both;
         margin: 20px 0 0;
@@ -920,12 +998,6 @@
       .share-this ul li a:hover {
         opacity: 1;
       }
-
-
-
-
-
-
 
       .comments iframe {
         min-height: 92px;
@@ -1160,6 +1232,20 @@
         font-size: 16px;
         font-weight: 900
       }
+      .fb-comments {
+        clear: both;
+        margin: 0 0 5px;
+        background: #FFF;
+        overflow: hidden;
+        border-radius: 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+                box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
+      }
+      iframe.fb_iframe_widget_lift {
+        width: 100px;
+      }
 
       /* Responsive */
       @media only screen and (max-width: 1000px) {
@@ -1183,6 +1269,9 @@
         .blog-posts.hfeed {
           display: block;
         }
+        .breadcrumbs {
+          margin: 0 0 10px;
+        }
         .post {
           margin: 0 0 10px;
         }
@@ -1190,15 +1279,17 @@
           width: auto;
           height: auto;
         }
+        .search form input {
+          font-size: 17px;
+        }
+      }
+      @media only screen and (max-width: 400px) {
         .b-header .header-logo {
           position: absolute;
           left: 50%;
           -webkit-transform: translateX(-50%);
               -ms-transform: translateX(-50%);
                   transform: translateX(-50%);
-        }
-        .search form input {
-          font-size: 17px;
         }
         #menu .menu {
           display: none;
@@ -1226,6 +1317,7 @@
                   box-shadow: 0 0 20px -5px rgba(0, 0, 0, .3);
         }
       }
+
     </style>
     <style amp-boilerplate='amp-boilerplate'>
       body {
@@ -1373,7 +1465,7 @@
           </b:section>
           <div class='search'>
             <form expr:action='data:blog.searchUrl' method='get' role='search'>
-              <input autocomplete='off' name='search' placeholder='Tìm kiếm từ khóa...' type='text'/>
+              <input autocomplete='off' name='q' placeholder='Tìm kiếm từ khóa...' type='text'/>
             </form>
             <button class='show-search'/>
             <button class='hide-search'/>
@@ -1962,25 +2054,30 @@
                   <div class='post'>
                     <b:if cond='data:blog.pageType == &quot;item&quot;'>
                       <div class='post-header'>
-                      <b:if cond='data:post.title'>
-                        <h1 class='post-title entry-title' itemprop='name headline'>
-                          <b:if cond='data:post.link'>
-                            <a expr:href='data:post.link'><data:post.title/></a>
-                            <b:else/>
-                            <b:if cond='data:post.url'>
-                              <b:if cond='data:blog.url != data:post.url'>
-                                <a expr:href='data:post.url'><data:post.title/></a>
+                        <b:if cond='data:post.title'>
+                          <h1 class='post-title entry-title' itemprop='name headline'>
+                            <b:if cond='data:post.link'>
+                              <a expr:href='data:post.link'><data:post.title/></a>
+                              <b:else/>
+                              <b:if cond='data:post.url'>
+                                <b:if cond='data:blog.url != data:post.url'>
+                                  <a expr:href='data:post.url'><data:post.title/></a>
+                                  <b:else/>
+                                  <data:post.title/>
+                                </b:if>
                                 <b:else/>
                                 <data:post.title/>
                               </b:if>
-                              <b:else/>
-                              <data:post.title/>
                             </b:if>
-                          </b:if>
-                        </h1>
-                      </b:if>
-                      <div class='time'><data:post.dateHeader/></div>
-                    </div>
+                          </h1>
+                        </b:if>
+                        <div class='info'>
+                          <div class='author'>Tác giả: <a expr:href='data:post.authurProfileUrl' rel='author'><data:post.author/></a></div>
+                          <div class='time'>Xuất bản: <data:post.dateHeader/></div>
+                          &lt;div class=&quot;fb-like&quot; data-href=&#39;<data:blog.canonicalUrl/>&#39; data-width=&quot;&quot; data-layout=&quot;button_count&quot; data-action=&quot;like&quot; data-size=&quot;small&quot; data-show-faces=&quot;false&quot; data-share=&quot;false&quot;&gt;&lt;/div&gt;
+                          &lt;div class=&quot;fb-save&quot; data-uri=&#39;<data:blog.canonicalUrl/>&#39; data-size=&quot;small&quot;&gt;&lt;/div&gt;
+                        </div>
+                      </div>
                     </b:if>
                     <article>
                       <b:if cond='data:blog.pageType != &quot;item&quot;'>
@@ -1993,7 +2090,7 @@
                                 <div class='thumbnail'><a expr:href='data:post.url'><img expr:src='data:post.thumbnailUrl'/></a></div>
                                 <b:else/>
                                 <div class='thumbnail'>
-                                  <a expr:href='data:post.url'><img src='//1.bp.blogspot.com/-ubdXYMyKqTY/XVqMgi4ge5I/AAAAAAAAMM8/nfk0Mrx9Dt8IwdU0ZL7KwD0mJ0MqNCbBgCLcBGAs/s1600/thumbnail.png'/></a>
+                                  <a expr:href='data:post.url'><img src='//1.bp.blogspot.com/-wl_UJgCeb6I/XV0AJhHlgtI/AAAAAAAAMOA/Rk_wK-cEisIBIJio4JsPbF72sgsAXslegCLcBGAs/s1600/thumbnail.png'/></a>
                                 </div>
                               </b:if>
                             </b:if>
@@ -2031,11 +2128,10 @@
                     <b:if cond='data:blog.pageType == &quot;item&quot;'>
                       <div class='post-footer'>
                         <div class='tags'>
-                          <h1>Tags:</h1>
                           <b:if cond='data:post.labels'>
+                            <h1>Tags:</h1>
                             <b:loop values='data:post.labels' var='label'>
-                              <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
-                              <b:if cond='data:label.isLast != &quot;true&quot;'/>
+                              <a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>,</b:if>
                             </b:loop>
                           </b:if>
                         </div>
@@ -2056,8 +2152,8 @@
                               <a class='newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'/>
                               <b:else/>
                               <a>
-                                <strong>Sorry!</strong>
-                                <span>Bạn đang xem bài viết gần đây nhất</span>
+                                <strong>Bạn đang xem</strong>
+                                <span>Bài viết mới nhất!</span>
                               </a>
                             </b:if>
                           </li>
@@ -2066,8 +2162,8 @@
                               <a class='older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'/>
                               <b:else/>
                               <a>
-                                <strong>Sorry!</strong>
-                                <span>Bạn đang xem bài viết cuối cùng</span>
+                                <strong>Bạn đang xem</strong>
+                                <span>Bài viết cuối cùng!</span>
                               </a>
                             </b:if>
                           </li>
@@ -2081,11 +2177,29 @@
                           -webkit-box-sizing: border-box;
                                   box-sizing: border-box;
                         }
+                        .post {
+                          margin: 0 0 10px;
+                        }
+                        .post-body.entry-content {
+                          padding: 0 5px;
+                        }
                         h1.post-title.entry-title {
                           font-size: 18px;
                         }
-                        .time {
-                          font-size: 13px;
+                        .info {
+                          margin: 5px 0 0;
+                          padding: 5px 0;
+                          font-size: 14px;
+                          border: 1px solid rgba(0, 0, 0, .1);
+                          border-left: 0;
+                          border-right: 0;
+                        }
+                        .info .author a {
+                          font-weight: bold;
+                          transition: 0.2s;
+                        }
+                        .info .author a:hover {
+                          color: #1BB;
                         }
                         .tags h1 {
                           font-size: 14px;
@@ -2146,6 +2260,9 @@
                       &lt;/div&gt;
                     </b:if>
                   </div>
+                  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+                    &lt;div class=&quot;fb-comments&quot; data-href=&#39;<data:blog.canonicalUrl/>&#39; data-width=&quot;&quot; data-numposts=&quot;15&quot;&gt;&lt;/div&gt;
+                  </b:if>
                 </b:includable>
                 <b:includable id='postQuickEdit' var='post'>
                 <b:if cond='data:post.editUrl'>
@@ -2199,6 +2316,9 @@
                   <style>
                     #HTML1, .b-header, .b-sidebar, .b-footer {
                       display: none;
+                    }
+                    .b-content {
+                      margin: 0;
                     }
                     .b-post {
                       float: none;
@@ -2654,7 +2774,7 @@
           </div>
           <div class='b-sidebar'>
             <b:section class='sidebar' id='sidebar' name='Sidebar' showaddelement='yes'>
-              <b:widget id='HTML5' locked='false' title='Thông tin trang web' type='HTML'>
+              <b:widget id='HTML5' locked='false' title='Thông tin trang web' type='HTML' version='1'>
                 <b:widget-settings>
                   <b:widget-setting name='content'>&lt;div class=&#39;card-author&#39;&gt;
   &lt;div class=&#39;head&#39;&gt;
@@ -2827,6 +2947,17 @@
             box-sizing: border-box;
   }
 &lt;/style&gt;</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <div class='widget-content'>
+                    <data:content/>
+                  </div>
+                  <b:include name='quickedit'/>
+                </b:includable>
+              </b:widget>
+              <b:widget id='HTML3' locked='false' title='Fanpage' type='HTML'>
+                <b:widget-settings>
+                  <b:widget-setting name='content'><![CDATA[<center><div class="fb-page" data-href="https://www.facebook.com/737230956486831/" data-width="350" data-height="230" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"></div></div></center>]]></b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
   <!-- only display title if it's non-empty -->
