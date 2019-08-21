@@ -1,0 +1,46 @@
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+  <div class='post-footer'>
+    <div class='tags'>
+      <b:if cond='data:post.labels'>
+        <h1>Tags:</h1>
+        <b:loop values='data:post.labels' var='label'>
+          <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+          <b:if cond='data:label.isLast != &quot;true&quot;'>,</b:if>
+        </b:loop>
+      </b:if>
+    </div>
+    <div class='share-this'>
+      <h1>Share this:</h1>
+      <ul>
+        <li><a class='facebook' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url + &quot;&amp;title=&quot;+ data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'/></li>
+        <li><a class='twitter' expr:href='&quot;http://twitter.com/share?url=&quot; + data:post.url + &quot;&amp;title=&quot; + data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'/></li>
+        <li><a class='pinterest' expr:href='&quot;http://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;media=&quot; + data:post.firstImageUrl + &quot;&amp;description=&quot; + data:post.snippet' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'/></li>
+        <li><a class='linkedin' expr:href='&quot;http://www.linkedin.com/shareArticle?url=&quot; + data:post.url + &quot;&amp;title=&quot;+ data:post.title' onclick='window.open(this.href, &apos;windowName&apos;, &apos;width=600, height=400, left=24, top=24, scrollbars, resizable&apos;); return false;' rel='nofollow' target='_blank'/></li>
+        <li><a class='more'/></li>
+      </ul>
+    </div>
+    <div class='ads-post'><a name='ads-post'/></div>
+    <ul class='pageurl'>
+      <li class='next'>
+        <b:if cond='data:newerPageUrl'>
+          <a class='newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'/>
+          <b:else/>
+          <a>
+            <strong>Bạn đang xem</strong>
+            <span>Bài viết mới nhất!</span>
+          </a>
+        </b:if>
+      </li>
+      <li class='previous'>
+        <b:if cond='data:olderPageUrl'>
+          <a class='older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'/>
+          <b:else/>
+          <a>
+            <strong>Bạn đang xem</strong>
+            <span>Bài viết cuối cùng!</span>
+          </a>
+        </b:if>
+      </li>
+    </ul>
+  </div>
+</b:if>
