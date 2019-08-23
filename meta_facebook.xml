@@ -1,0 +1,20 @@
+<b:if cond='data:blog.postImageUrl'>
+  <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+  <b:else/>
+  <b:if cond='data:blog.postImageThumbnailUrl'>
+    <meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+    <b:else/>
+    <meta content='https://3.bp.blogspot.com/-EfIHIKokt4w/XUP28p4PdoI/AAAAAAAAL7M/twEz4BkPmTUwDm-SfJ4EZ2gxxclbwGqiwCK4BGAYYCw/s1600/LOGO%2BH.png' property='og:image'/>
+  </b:if>
+</b:if>
+
+<!-- Meta Facebook -->
+<meta content='359757701254774' property='fb:app_id'/>
+<meta content='100011657834328' property='fb:admins'/>
+<meta content='article' property='og:type'/>
+<meta expr:content='data:blog.postImageThumbnailUrl' property='og:image'/>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<meta expr:content='data:blog.pageName' property='og:title'/>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<meta expr:content='data:post.link' property='og:url'/>
